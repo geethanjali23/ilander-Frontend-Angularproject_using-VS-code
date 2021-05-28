@@ -1,0 +1,13 @@
+
+.s{
+    margin-top: 150px;
+    width: max-content;
+    height: max-content;
+    background-color:rgb(255, 255, 255) ;
+    border-radius: 10%;
+    padding-left: 46px;
+    padding-right: 46px;
+}
+.p{
+    padding: 10px 47px;
+}

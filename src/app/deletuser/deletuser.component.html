@@ -1,0 +1,32 @@
+<h1 class="text-danger text-center">Delete USER Page</h1>
+<div [ngClass]="clr">{{msg}}</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Edit</th>
+            <th>Delet</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of data">
+            <td>{{x.id}}</td>
+            <td><button class="btn btn-success">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="delete1(x.user_id)">Delet</button></td>
+            <td>{{x.user_fname}}</td>
+            <td>{{x.user_lname}}</td>
+            <td>{{x.user_email}}</td>
+            <td>{{x.user_phone}}</td>
+            <td>{{x.user_password}}</td>
+    
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>

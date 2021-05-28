@@ -1,0 +1,22 @@
+
+<div class="container s">
+  <br>
+  <h1 class="text-center text-primary">Admin Page</h1><br>
+  <form action="#" class="p" #myform='ngForm'>
+      <div class="form-group">
+          <label>E-mail:</label>
+          <input type="email" class="form-control" #email='ngModel' [(ngModel)]="myObj.mail" name="myObj.mail" required>
+          <p *ngIf='email.touched && email.invalid' class="text-danger">Please Enter Email</p>
+      </div>
+        
+      <div class="form-group">
+        <label >Password:</label>
+        <input type="password" class="form-control" #psw='ngModel' [(ngModel)]="myObj.pwd" name="myObj.pwd" required>
+        <p *ngIf='psw.touched && psw.invalid' class="text-danger">Please Enter Password</p>
+      </div>
+      
+      <button type="submit" class="btn btn-primary text-light" [disabled]="myform.invalid" (click)='reg()'>Submit</button>
+      <p [ngClass]="clr"><b>{{status1}}</b></p><br>
+    </form>
+
+</div>

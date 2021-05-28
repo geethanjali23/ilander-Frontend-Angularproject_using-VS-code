@@ -1,0 +1,39 @@
+.d{
+	
+	list-style-position:inside;
+}
+.p1
+{
+	padding: 20px 0px;
+    border-radius: 20px;
+    margin-top: 3px;
+	margin-right: 3px;
+}
+.g1
+{
+	border-radius: 20px;
+	margin-top: 3px;
+}
+.s1
+{
+	border: 0.00000000001px solid gray;
+	/*border-bottom: 0.00000000001px solid gray;*/
+    border-radius: 20px;
+    padding: 15px 15px;
+}
+.r1
+{
+	border-left: 0.00000000001px solid gray;
+	border-bottom: 0.00000000001px solid gray;
+    border-radius: 20px 0px 0px 20px;
+    padding: 15px 15px;
+}
+.main .nav-link
+{
+	border: 1px solid black;
+    /*background-color: gray;*/
+    color: black;
+}
+.ff{
+	padding : 15px 15px;
+}

@@ -1,0 +1,105 @@
+<!-- Button to Open the Modal -->
+<br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add Sliders
+  </button>
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add Header Sliders</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form action="#" #myform='ngForm'>
+                <div class="form-group">
+                  <label>Upload Image *</label>
+                  <input type="file" class="form-control" #fle='ngModel' [(ngModel)]="slider.img" name="slider.img" (change)="uploadImg($event)" required>
+                  <p *ngIf='fle.touched && fle.invalid' class="text-danger">Please select Img</p>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" (click)="addslider()">Add sliders</button>
+                    <p [ngClass]="clr"><b>{{msg}}</b></p>
+                </div>
+              </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="close()">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <h1 class="text-center text-primary">Sliders Page </h1>
+  <p [ngClass]="clr"><b>{{msg1}}</b></p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Sl.No</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Image</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of res">
+        <td>{{x.id}}</td>
+        <td><button class="btn btn-success" (click)="editslider(x.slider_id,x.slider_image)">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="delslider(x.slider_id)">Del</button></td>
+        <td><img [src]="filepath+x.slider_image" width='160px' height='100px'></td>
+        <td><p class="text-success" *ngIf="x.slider_status==1">Active</p><p class="text-danger" *ngIf="x.slider_status==0">Inactive</p></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="modal" id="updateimg">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Update Sliders</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form action="#" #myform='ngForm'>
+                <div class="form-group">
+                  <label>Update Image *</label><br>
+                  <img [src] ="filepath+sliderup.img1" width="100px" height="100px"/>
+                  <input type="hidden" name="sliderup.uid" [(ngModel)]="sliderup.uid"/>
+                  <input type="file" class="form-control" (change)="uploadImg($event)" name="sliderup.img" [(ngModel)]="sliderup.img" required>
+                </div>
+                <div class="form-group">
+                  <label>Image Staus *</label><br>
+                  <select class="form-control" id="email" name="sliderup.Status" [(ngModel)]="sliderup.Status" required>
+                    <option value='1' class="text-success" >Active <option>
+                    <option value='0' class="text-danger" >InActive <option></option>
+                  </select>
+                  </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" (click)="updatesliders()" >Update</button>
+                    <p [ngClass]="clr"><b>{{msgu}}</b></p>
+                </div>
+            </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="close1()">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

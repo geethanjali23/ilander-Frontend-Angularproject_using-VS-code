@@ -1,0 +1,104 @@
+<app-header></app-header>
+<section class="container">
+    <div class="row">
+        <div class="col-xl-7 col-12 bg-light rounded border border-info" style="margin-top:6px;padding-top:10px;">
+            <h3 class="text-primary text-center">Other Students Registration</h3><br>
+            <p class="text-dark text-center">Register With Email</p>
+            <form action="#" #myform='ngForm' class="form-horizontal">
+                <div class="form-group row text-center" style="padding: 10px 60px">
+                    <div class="col-sm-6 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary text-white"><i class="bi bi-person-circle"></i></span>
+                        </div>
+                        <input type="text" class="form-control" #fname='ngModel' [(ngModel)]="myObj.fname" name="myObj.fname" placeholder="Enter your name" required>
+                        <!--<p *ngIf='fname.touched && fname.invalid' class="text-danger">Please Enter FName</p>-->
+                    </div>
+                    <div class="col-sm-6 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary text-white"><i class="bi bi-envelope-open"></i></span>
+                        </div>
+                        <input type="email" class="form-control" #email='ngModel' [(ngModel)]="myObj.mail" name="myObj.mail" placeholder="Enter Email" required>
+                        <!--<p *ngIf='email.touched && email.invalid' class="text-danger">Please Enter Email</p>-->
+                    </div>
+                </div>
+                <div class="row" style="padding: 0px 60px">
+                    <div class="col-sm-6">
+                        <p *ngIf='fname.touched && fname.invalid' class="text-danger">Please Enter FName</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p *ngIf='email.touched && email.invalid' class="text-danger">Please Enter Email</p>
+                    </div>
+                </div>
+                <div class="form-group row text-center" style="padding: 5px 60px">
+                    <div class="col-sm-6 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary text-white"><i class="bi bi-telephone-fill"></i></span>
+                        </div>
+                        <input type="email" class="form-control" #phn='ngModel' [(ngModel)]="myObj.ph" name="myObj.ph" placeholder="Enter phoneNo" required>
+                        <!--<p *ngIf='phn.touched && phn.invalid' class="text-danger">Please Enter Mobile Number</p>-->
+                    </div>
+                    <div class="col-sm-6 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary text-white"><i class="bi bi-sliders"></i></span>
+                        </div>
+                        <input type="password" class="form-control" #psw='ngModel' [(ngModel)]="myObj.pwd" name="myObj.pwd" placeholder="Enter password" required>
+                        <!--<p *ngIf='psw.touched && psw.invalid' class="text-danger">Please Enter Password</p>-->
+                    </div>
+                </div>
+                <div class="row" style="padding: 0px 60px">
+                    <div class="col-sm-6">
+                        <p *ngIf='phn.touched && phn.invalid' class="text-danger">Please Enter Mobile No</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p *ngIf='psw.touched && psw.invalid' class="text-danger">Please Enter Password</p>
+                    </div>
+                </div>
+                <div class="form-group row text-center" style="padding: 5px 60px">
+                    <div class="col-sm-6 input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-primary text-white"><i class="bi bi-person-circle"></i></span>
+                        </div>
+                        <input type="text" class="form-control" #lname='ngModel' [(ngModel)]="myObj.lname" placeholder="Enter Lname" name="myObj.lname" required>
+                        <!--<p *ngIf='lname.touched && lname.invalid' class="text-danger">Please Enter LName</p>-->
+                    </div>
+                    <div class="col-sm-6 input-group text-center">
+                        <button type="submit" class="btn btn-primary" [disabled]="myform.invalid" (click)='reg()'>SUBMIT</button>
+                    </div>
+                </div>
+                <div class="row" style="padding: 0px 60px">
+                    <div class="col-sm-6">
+                        <p *ngIf='lname.touched && lname.invalid' class="text-danger">Please Enter LName</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p [ngClass]="clr"><b>{{output}}</b></p>
+                    </div>
+                </div>
+                <!--<div class="text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="myform.invalid" (click)='reg()'>SUBMIT</button>
+                    <p [ngClass]="clr"><b>{{output}}</b></p>
+                </div>--><br>
+            </form>
+        </div>
+        <div class="col-xl-5 col-12 bg-light rounded border border-info" style="margin-top:6px">
+            <h3 class="text-primary text-center" style="padding-top: 10px">Login Form</h3><br>
+            <div class="input-group" style="padding: 5px 60px">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-envelope-open"></i></span>
+                </div>
+                <input type="email" class="form-control" placeholder="Enter email" id="email">
+            </div>
+            <div class="input-group" style="padding: 5px 60px">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-lock"></i></span>
+                </div>
+                <input type="pwd" class="form-control" placeholder="Enter Password" id="pwd">
+            </div>
+            <span style="padding: 15px 15px 0px 60px"><button class="btn btn-success">Submit</button></span>
+            <span style="padding: 15px 0px 0px 0px"><button class="btn btn-warning">Forgot Password</button></span><br>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+    
+<app-footer></app-footer>

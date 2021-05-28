@@ -1,0 +1,117 @@
+<br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add Content
+  </button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add Home Content</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form action="#" #myform='ngForm'>
+                <div class="form-group">
+                        <label>Title *</label>
+                        <input type="text" class="form-control" #dname='ngModel' [(ngModel)]="myObj.dname" name="myObj.dname" placeholder="Enter Title" required>
+                        <p *ngIf='dname.touched && dname.invalid' class="text-danger">Please Enter Title</p>
+                        <label>Upload Image *</label>
+                        <input type="file" class="form-control" #dimg='ngModel' [(ngModel)]="myObj.img" name="myObj.img" (change)="uploadImg($event)" required>
+                        <p *ngIf='dimg.touched && dimg.invalid' class="text-danger">Please select Img</p>
+                        <label>Add Description *</label>
+                        <input type="para" class="form-control" #ddesc='ngModel' [(ngModel)]="myObj.desc" name="myObj.desc" placeholder="Enter Description" required>
+                        <p *ngIf='ddesc.touched && ddesc.invalid' class="text-danger">Please Add Description</p>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="addpara()">Add Content</button>
+                <p [ngClass]="clr"><b>{{msg}}</b></p>
+            </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="close()">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+<h3 class="text-danger text-center">HOMR PAGE CONTENTS</h3>
+<div [ngClass]="clr">{{msgd}}</div>
+    <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Edit</th>
+            <th>Delet</th>
+            <th>TITLE</th>
+            <th>IMAGE</th>
+            <th>DESCRIPTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of res">
+            <td>{{x.id}}</td>
+            <td><button class="btn btn-success" (click)="edit1(x.d_id)" >Edit</button></td>
+            <td><button class="btn btn-danger" (click)="delete1(x.d_id)">Delet</button></td>
+            <td>{{x.d_name}}</td>
+            <td><img [src]="filepath+x.d_img" width='100px' height='100px'></td>
+            <td>{{x.d_desc}}</td>
+           </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal" id="myModal1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">UPDATE USER</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form>
+                  <div class="form-group">
+                      <label>USER-ID</label>
+                        <input type="number" class="form-control" [(ngModel)]="myObj.did" name="myObj.did" readonly>
+                        <!--ng modal we use at the time we use name attribute-->
+                  </div>
+                <div class="form-group">
+                  <label>Title</label>
+                    <input type="text" class="form-control" [(ngModel)]="myObj.dname" name="myObj.dname">
+                    <!--ng modal we use at the time we use name attribute-->
+                </div>
+                <div class="form-group">
+                  <label>Image</label>
+                  <!--<img [src] ="filepath+myObj.img" width="100px" height="100px"/>-->
+                  <input type="file" class="form-control" (change)="uploadImg($event)" name="myObj.img" [(ngModel)]="myObj.img" required>
+                </div>
+                <div class="form-group">
+                  <label>Description</label>
+                  <input type="text" class="form-control"  [(ngModel)]="myObj.desc" name="myObj.desc">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="updateme1()">Update</button>
+                <p [ngClass]="clr"><b>{{msg1}}</b></p>
+              </form>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="clss()">Close</button>
+            </div>
+      
+          </div>
+        </div>
+    </div>

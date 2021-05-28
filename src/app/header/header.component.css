@@ -1,0 +1,27 @@
+.header
+{
+	padding-top : 50px;
+}
+.ale {
+  padding: 16px 24px;
+  text-align: center;
+  vertical-align: middle;
+	display: inline-block;
+}
+.itag i
+{
+	padding: 0 7px;
+	font-size : 30px;	
+}
+.bor
+{
+	border: 5px solid #014084;
+}
+#sec1 , #sec2
+{
+	margin-top : 8px;
+}
+#sec2  li
+{
+	padding-right:50px;
+}

@@ -1,0 +1,88 @@
+<header class="header container">
+    <div class="row text-center bg-light bor">
+      <div class="col-12 col-md-4 col-xl-4 ale">
+        <img src="assets/images/logo2.jpg" class="img-responsive" width="100%" height="100%"/>
+      </div>
+      <div class="col-12 col-md-4 col-xl-4" style="font-size:30px;padding-top: 36px">
+        <strong>1 ON 1 Trainings</strong>
+      </div>
+      <div class="col-12 col-md-4 col-xl-4 itag ale">
+        <i class="bi bi-facebook" style="color:blue"></i><i class="bi bi-twitter" style="color:green"></i><i class="bi bi-google" style="color:red"></i><i class="bi bi-linkedin" style="color:pink"></i><br><i class="bi bi-telephone-fill" style="color:purple"></i><i style="color:blue">+91-9032880328</i>
+      </div>
+    </div>
+  </header>
+  <section id="sec1">
+    <div class="container" style="border:3px solid white">
+      <div class="row">
+        <div class="col-xl-2 col-12 bg-primary rounded border border-info" style="padding-top: 11px">
+          <p class="text-white text-center">Message Board</p>
+        </div>
+        <div class="col-xl-10 col-12 bg-dark rounded border border-dark" style="padding-top: 11px">
+          <marquee class="text-white">100% Hands on Experience | Certified Training | Practical Knowledge | Practical Implementation On Live Projects | Live Project Training | Job Oriented Training | 100% Job Assistance</marquee>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="sec2">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark container">
+      
+      <button class="navbar-toggler bg-light text-dark" data-toggle="collapse" data-target="#menu">Menu<i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/about">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/course">COURSE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/contact">CONTACT-US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/login">LOGIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/register">REGISTER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/faq">FAQ</a>
+        </li>
+        </ul>
+      </div>
+    </nav>
+  </section>	
+  <section id="sec3c" class="container" style="padding-left:0;padding-right:0">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+      <li data-target="#demo" attr.data-slide-to="{{i}}" *ngFor="let x of res, let i=index" [ngClass]="(i===0)? 'active' :'' "></li>
+      </ul>
+      
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let x of res, let i=index" [ngClass]="(i==0)? 'active' :'' " >
+        <span *ngIf= "x.slider_status==1"><img [src]="filepath+x.slider_image" alt="" width="100%" height="330px"/></span>
+      </div>
+      <!--<div class="carousel-item">
+        <img src="assets/images/on1.jpg" alt="" width="100%" />
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/graphic.jpg" alt="" width="100%" />
+      </div>-->
+      </div>
+      
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </section>
+  
